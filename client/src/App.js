@@ -98,45 +98,47 @@ function App() {
   }, [paramsRoom]);
 
   return (
-    <div className="container">
-      Room: {room}
-      <button className="btn" onClick={() => setShare(!share)}>
-        Share
-      </button>
-      {share ? (
-        <>
-          <br />
-          <br />
-          Share link: <input type="text" value={`${window.location.href}?room=${room}`} readOnly />
-        </>
-      ) : null}
-      <br />
-      <br />
-      Turn: {myTurn ? 'You' : 'Opponent'}
-      <br />
-      {hasOpponent ? '' : 'Waiting for opponent...'}
-      <p>
-        {winner || turnNumber === 9 ? (
-          <button className="btn" onClick={sendRestart}>
-            Restart
-          </button>
+    <div className='main'>
+      <div className="container">
+        <span className='txt'> Room: {room} </span>
+        <button className="btn" onClick={() => setShare(!share)}>
+          Share
+        </button>
+        {share ? (
+          <>
+            <br />
+            <br />
+            Share link: <input className='inpt' type="text" value={`${window.location.href}?room=${room}`} readOnly />
+          </>
         ) : null}
-        {winner ? <span>We have a winner: {player}</span> : turnNumber === 9 ? <span>It's a tie!</span> : <br />}
-      </p>
-      <div className="row">
-        <Box index={0} turn={turn} value={game[0]} />
-        <Box index={1} turn={turn} value={game[1]} />
-        <Box index={2} turn={turn} value={game[2]} />
-      </div>
-      <div className="row">
-        <Box index={3} turn={turn} value={game[3]} />
-        <Box index={4} turn={turn} value={game[4]} />
-        <Box index={5} turn={turn} value={game[5]} />
-      </div>
-      <div className="row">
-        <Box index={6} turn={turn} value={game[6]} />
-        <Box index={7} turn={turn} value={game[7]} />
-        <Box index={8} turn={turn} value={game[8]} />
+        <br />
+        <br />
+        <span className='turn'>Turn: {myTurn ? 'You' : 'Opponent'}</span>
+        <br />
+        {hasOpponent ? '' : 'Waiting for opponent...'}
+        <p>
+          {winner || turnNumber === 9 ? (
+            <button className="btn" onClick={sendRestart}>
+              Restart
+            </button>
+          ) : null}
+          {winner ? <span>We have a winner: {player}</span> : turnNumber === 9 ? <span>It's a tie!</span> : <br />}
+        </p>
+        <div className="row">
+          <Box index={0} turn={turn} value={game[0]} />
+          <Box index={1} turn={turn} value={game[1]} />
+          <Box index={2} turn={turn} value={game[2]} />
+        </div>
+        <div className="row">
+          <Box index={3} turn={turn} value={game[3]} />
+          <Box index={4} turn={turn} value={game[4]} />
+          <Box index={5} turn={turn} value={game[5]} />
+        </div>
+        <div className="row">
+          <Box index={6} turn={turn} value={game[6]} />
+          <Box index={7} turn={turn} value={game[7]} />
+          <Box index={8} turn={turn} value={game[8]} />
+        </div>
       </div>
     </div>
   );

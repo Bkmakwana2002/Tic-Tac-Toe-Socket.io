@@ -1,24 +1,80 @@
+* {
+  font-size: large;
+  color: wheat;
+}
+
+.main {
+  height: 100vh;
+  width: 100vhw;
+  background-image: url("./parallax-bg.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 40% 40%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 .container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border: 1px solid black;
+  padding: 5rem;
+  backdrop-filter: blur(10px);
+  
+}
+
+.container .btn {
+  background: rgb(0, 255, 123);
+  padding: 0.5rem 1rem;
+  margin: 15px 5px;
+  font-size: 1.2rem;
+  color: black;
+  border: none;
+  border-radius: 1rem;
+}
+
+.btn:hover{
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.inpt{
+  color: black;
+  padding: 0.2rem;
+  width: 325px;
+}
+
+.turn{
+  font-size: 1.5rem}
+
+.container .txt {
+  font-size: 1.5rem;
+
 }
 
 .box {
   width: 5rem;
   height: 5rem;
-  border: 1px solid #000;
+  border: 5px solid whitesmoke;
   margin-right: -1px;
   margin-top: -1px;
   text-align: center;
   line-height: 4.5rem;
   font-size: 3rem;
   font-weight: bold;
+  margin: 1rem;
+  color: white;
 }
 
 .row {
   display: flex;
+  margin: 1rem;
 }
 
 .reset-btn {

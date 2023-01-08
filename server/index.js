@@ -8,7 +8,7 @@ const INDEX = '/index.html';
 const app = express()
 app.use((_req, res) => res.sendFile(INDEX, { root: __dirname }))
 
-const server = app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}...`));
+const server = app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
 
 // socket server
 const socket = require('socket.io');
